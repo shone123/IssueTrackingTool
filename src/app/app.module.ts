@@ -61,6 +61,13 @@ import { HttpClientModule } from '@angular/common/http';
 //import { DashboardComponent } from './dashboard/dashboard.component';
 import { AuthenticationService } from './services/authentication.service';
 import { UserComponent } from './Register/user.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { CreateComponent } from './issue/create/create.component';
+import { MyListComponent } from './issue/my-list/my-list.component';
+import { SearchComponent } from './issue/search/search.component';
+import { ViewComponent } from './issue/view/view.component';
+import { NavComponent } from './layout/nav/nav.component';
+import { IssueListComponent } from './issue/issue-list/issue-list.component';
 
 
 // Import library module
@@ -90,7 +97,14 @@ export function getAuthServiceConfigs() {
   declarations: [
     AppComponent,
     UserComponent,
-    LoginComponent
+    LoginComponent,
+    DashboardComponent,
+    CreateComponent,
+    MyListComponent,
+    SearchComponent,
+    ViewComponent,
+    NavComponent,
+    IssueListComponent
   ],
   imports: [
     BrowserModule, 
