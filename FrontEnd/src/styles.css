@@ -1,0 +1,81 @@
+/* You can add global styles to this file, and also import other style files */
+
+
+/*For toastr in bootstrap > 4.1.3*/
+
+.toast-success {
+    background-color: #51a351 !important;
+    border-color: #c7eacc !important;
+}
+
+.no-data-available {
+    text-align: center;
+}
+
+table>thead {
+    color: white;
+    background-color: #E95420 !important ;
+}
+
+td,
+th {
+    border: solid 1px #eee;
+}
+
+.table-striped tbody tr:nth-of-type(even) {
+    /* background-color: #fef0eb; */
+    color: #E95420 !important;
+    background-color: #E95420 !important;
+}
+
+.table-striped tbody tr:nth-of-type(odd) {
+    /* background-color: #fffefd; */
+    color: #797b7c;
+    background-color: #f9fafb;
+}
+
+
+/* table>thead {
+    color: white;
+    background-color: #363435;
+}
+
+td,
+th {
+    border: solid 1px #ccc;
+}
+
+.table-striped tbody tr:nth-of-type(even) {
+    background-color: #fbfcf9;
+}
+
+.table-striped tbody tr:nth-of-type(odd) {
+    background-color: #dedede;
+} */
+
+.hover-cursor {
+    cursor: pointer;
+}
+
+.taskCompleted {
+    text-decoration: line-through;
+}
+
+.dataTables_empty {
+    display: none;
+}
+
+
+/* You can add global styles to this file, and also import other style files */
+
+
+/* Fix user-agent */
+
+* {
+    box-sizing: border-box;
+}
+
+ul {
+    list-style: none;
+    word-wrap: break-word;
+}

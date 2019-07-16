@@ -334,21 +334,7 @@ let signInSocial = (req, res) => {
             res.status(err.status)
             res.send(err)
         });
-    // findUser(req, res)
-    //     .then(validatePassword)
-    //     .then(generateToken)
-    //     .then(saveToken)
-    //     .then((resolve) => {
-    //         let apiResponse = response.generate(false, 'Login Successful', 200, resolve)
-    //         res.status(200)
-    //         res.send(apiResponse)
-    //     })
-    //     .catch((err) => {
-    //         ////console.log("errorhandler");
-    //         ////console.log(err);
-    //         res.status(err.status)
-    //         res.send(err)
-    //     });
+   
 }; //end of singinfunction
 
 let getAllUsersFunction = (req, res) => {
@@ -443,7 +429,7 @@ let createIssueFunction = (req, res) => {
 
 let register = (req, res) => {
     //console.log('req.body')
-    //console.log(req.body)
+    console.log("my request",req.body)
 
     var env = process.env.NODE_ENV || 'dev';
     //console.log('\n\n\n\n\n\n\n\n' + env);
@@ -473,17 +459,10 @@ let register = (req, res) => {
     }; //end of checkParameters
 
     let saveData = () => {
-        //console.log('req')
-        //console.log(req.file)
-
-        //console.log(shortid.generate())
-        //console.log(titleCase(req.body.name.trim()))
-        //console.log(req.body.email.trim().toLowerCase())
-        //console.log(passwordLib.hashpassword(req.body.password))
-        //console.log(req.file.filename)
+        
         return new Promise((resolve, reject) => {
 
-            let dirName = path.join(__dirname, './uploads')
+            let dirName = path.join(__dirname, '../../uploads')
 
             let user = new UserModel({
                 userId: shortid.generate(),
@@ -495,7 +474,6 @@ let register = (req, res) => {
                 photoUrl: req.file.filename,
                 createdOn: time.getLocalTime()
             });
-            console.log("my user", user);
             //console.log('user')
             //console.log(user)
 

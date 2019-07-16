@@ -1,0 +1,44 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <div class="container">
+        <a class="navbar-brand" href="#">Issue Tracking App</a>
+
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <a class="nav-link" (click)="goToSignUp()">Signup </a>
+            </li>
+        </ul>
+    </div>
+</nav>
+<div class="container">
+    <!-- <ng-content></ng-content> -->
+    <div class="row p-0 m-0">
+        <div class="col-lg"></div>
+        <div class="col-lg p-5">
+            <form #loginForm="ngForm" (submit)="login()">
+                <!-- -->
+                <h2 class="text-center text-primary">Login</h2>
+                <hr>
+
+                <div class="form-group form-label-group">
+                    <input type="text" class="form-control" name="username" [(ngModel)]="model.username" required placeholder="Username">
+                    <label for="inputEmail">Username</label>
+                </div>
+                <div class="form-group form-label-group">
+                    <input type="password" class="form-control" name="password" [(ngModel)]="model.password" required placeholder="Password">
+                    <label for="inputEmail">Password</label>
+                </div>
+
+                <div class="form-group text-center social-btn">
+                    <button class="btn btn-block btn-success" type="submit"><i class="fa fa-sign-in"></i>Sign In</button>
+                    <button class="btn btn-block btn-danger" type="button" (click)="signInSocial('Google')"><i class="fa fa-google"></i>Signin with Google</button>
+                </div>
+            </form>
+        </div>
+        <div class="col-lg"></div>
+    </div>
+</div>
+
+
+<ngx-spinner bdColor="rgba(51,51,51,0.8)" size="small" color="#e95420" type="ball-spin-clockwise-fade-rotating">
+    <p style="font-size: 14px; color: #ccc">Loading...</p>
+</ngx-spinner>

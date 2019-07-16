@@ -17,49 +17,44 @@ const globalErrorMiddleware = require('./app/middlewares/appErrorHandler');
 //logger library
 const logger = require('./app/libs/loggerLib');
 
-// app.use(morgan('dev'));
+app.use(morgan('dev'));
 
-// app.use(bodyParser.json());
-// app.use(bodyParser.urlencoded({ extended: false }));
-// app.use(cookieParser());
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(cookieParser());
 
-// app.use(passport.initialize());
-// app.use(routeLoggerMiddleware.logIp);
-// app.use(globalErrorMiddleware.globalErrorHandler);
-// app.use(express.static(path.join(__dirname, 'uploads')));
-// console.log(path.join(__dirname, './apidoc'))
-// app.use(express.static(path.join(__dirname, './apidoc')));
+app.use(passport.initialize());
+app.use(routeLoggerMiddleware.logIp);
+app.use(globalErrorMiddleware.globalErrorHandler);
+app.use(express.static(path.join(__dirname, 'uploads')));
+console.log(path.join(__dirname, './apidoc'))
+app.use(express.static(path.join(__dirname, './apidoc')));
 
-// const modelsPath = './app/models';
-// const routesPath = './app/routes';
+const modelsPath = './app/models';
+const routesPath = './app/routes';
 
-// app.all('*', function(req, res, next) {
-//     res.header("Access-Control-Allow-Origin", "*");
-//     res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
-//     res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE')
-//     next();
-// });
+app.all('*', function(req, res, next) {
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+    res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE')
+    next();
+});
 
 
-// //Bootstrap models
-// fs.readdirSync(modelsPath).forEach(function(file) {
-//     if (~file.indexOf('.js')) require(modelsPath + '/' + file)
-// });
+//Bootstrap models
+fs.readdirSync(modelsPath).forEach(function(file) {
+    if (~file.indexOf('.js')) require(modelsPath + '/' + file)
+});
 // end Bootstrap models
 
 
 // Bootstrap route
-// fs.readdirSync(routesPath).forEach(function(file) {
-//     console.log(routesPath + '/' + file)
-//     if (~file.indexOf('.js')) {
-//         let route = require(routesPath + '/' + file);
-//         route.setRouter(app);
-//     }
-// });
-
-app.post('/', function(req,res){
-
-    res.send("Welcome");
+fs.readdirSync(routesPath).forEach(function(file) {
+    console.log(routesPath + '/' + file)
+    if (~file.indexOf('.js')) {
+        let route = require(routesPath + '/' + file);
+        route.setRouter(app);
+    }
 });
 // end bootstrap route
 

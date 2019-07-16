@@ -8,7 +8,7 @@ let redis = require('redis'),
     client = redis.createClient({
         port: 12264, // replace with your port
         host: 'redis-12264.c1.asia-northeast1-1.gce.cloud.redislabs.com', // replace with your hostanme or IP address
-        password: 'Himanshu@123'
+        password: 'Abhishek@123'
     });
 client.on('connect', () => {
     console.log("redis connection successfully opened");
